@@ -36,13 +36,14 @@ saveBtn.addEventListener("click", () => {
   myModal.style.display = "none"; // Close the modal after saving
 });
 
-$(function () {
-  $("ul.left-menu li > ul").hide();
-  $("ul.left-menu li").click(function (e) {
-    e.stopPropagation();
-    $(this).children("ul").slideToggle();
+function getSelectedInterests() {
+  const selectedInterests = [];
+  const checkboxes = document.querySelectorAll(
+    '.dropdown-item input[type="checkbox"]:checked'
+  );
+  checkboxes.forEach((checkbox) => {
+    selectedInterests.push(checkbox.value);
   });
-  $("ul.left-menu a").click(function (e) {
-    //e.stopPropagation();
-  });
-});
+  console.log("Selected Interests:", selectedInterests);
+  // You can perform any further actions with the selected interests here
+}

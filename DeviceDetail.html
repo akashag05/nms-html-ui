@@ -163,7 +163,7 @@
               <div class="row align-items-center">
                 <div class="col-sm-3 col-12 mb-4 mb-sm-0">
                   <!-- Title -->
-                  <h1 class="h2 mb-0 ls-tight">Discovery Profile</h1>
+                  <h1 class="h2 mb-0 ls-tight">Device Details</h1>
                 </div>
                 <!-- Actions -->
                 <div class="col-sm-5 col-12 pb-3">
@@ -206,125 +206,92 @@
         <main class="py-6 bg-surface-secondary">
           <div class="d-flex row container-fluid overflow-auto">
             <div class="col-md-2">
-              <p>SUb Sidebar</p>
+              <p>Sub Sidebar</p>
             </div>
             <div class="col-md-10">
-              <div class="d-flex justify-content-between my-3">
-                <div>
-                  <form class="d-flex">
-                    <input
-                      class="form-control me-2"
-                      type="search"
-                      placeholder="Search"
-                      aria-label="Search"
-                    />
-                    <button class="btn btn-sm btn-primary" type="submit">
-                      <i class="bi bi-search"></i>
-                    </button>
-                  </form>
-                </div>
-                <div>
-                  <a href="./CreateDiscovery.html">
-                    <button class="btn btn-sm btn-primary">
-                      + Discover Profile
-                    </button>
-                  </a>
+              <div>
+                <div class="p-4 m-3 row justify-content-evenly">
+                  <!-- <div class="col-md-3">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Select OEM</option>
+                      <option value="1">Cisco</option>
+                      <option value="2">Juniper</option>
+                      <option value="3">Tech Mahindra</option>
+                    </select>
+                  </div> -->
+                  <div class="col-md-4">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Select OS</option>
+                      <option value="1">IOS</option>
+                      <option value="2">IOS XR</option>
+                      <option value="3">ASR</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Select Object Type</option>
+                      <option value="1">CPU</option>
+                      <option value="2">Memory</option>
+                      <option value="3">Interface</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btm-sm btn-primary">Filter</button>
+                  </div>
                 </div>
               </div>
               <div class="">
-                <table class="table rounded-3 border-2">
+                <table class="table border-2">
                   <thead class="bg-gray-200 text-black">
                     <tr>
-                      <th scope="col">Profile Name</th>
-                      <th scope="col">IP/Host</th>
-                      <th scope="col">Device Type</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Last Run On</th>
-                      <th scope="col">Scheduler</th>
+                      <th scope="col">#</th>
+                      <th scope="col">Object Type</th>
+                      <th scope="col">Indicator Name (MIB)</th>
+                      <th scope="col">Alias (User)</th>
+                      <th scope="col">INdicator OID</th>
+                      <th scope="col">Unit</th>
+                      <th scope="col">Type (Gauge / Counter)</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">
-                        <a href="DeviceDetail.html">Cisco IOS</a>
-                      </th>
-                      <td>10.10.10.11</td>
-                      <td>Router</td>
-                      <td>
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-secondary rounded-pill text-white py-1 bg-gray-400"
-                        >
-                          Not Run
-                        </button>
-                      </td>
-                      <td>11:10:21 AM 02/08/2023</td>
-                      <td><i class="bi bi-clock-history fs-5"></i></td>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
                       <td><i class="bi bi-three-dots-vertical"></i></td>
                     </tr>
                     <tr>
-                      <th scope="row">Juniper</th>
-                      <td>10.10.10.12</td>
-                      <td>Switch</td>
-                      <td>
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-secondary rounded-pill text-white py-1 bg-blue-400"
-                        >
-                          Success
-                        </button>
-                      </td>
-                      <td>11:10:21 AM 02/08/2023</td>
-                      <td><i class="bi bi-clock-history fs-5"></i></td>
+                      <th scope="row">2</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
                       <td><i class="bi bi-three-dots-vertical"></i></td>
                     </tr>
                     <tr>
-                      <th scope="row">Fortinet</th>
-                      <td>10.10.10.13</td>
-                      <td>FireWall</td>
-                      <td>
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-danger rounded-pill text-white py-1 bg-red-400"
-                        >
-                          Failed
-                        </button>
-                      </td>
-                      <td>11:10:21 AM 02/08/2023</td>
-                      <td><i class="bi bi-clock-history fs-5"></i></td>
-                      <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">F5 Big IP</th>
-                      <td>10.10.10.14</td>
-                      <td>Load Balancer</td>
-                      <td>
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-success rounded-pill text-white py-1 bg-green-400"
-                        >
-                          Provisioned
-                        </button>
-                      </td>
-                      <td>11:10:21 AM 02/08/2023</td>
-                      <td><i class="bi bi-clock-history fs-5"></i></td>
-                      <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Lininx Server</th>
-                      <td>10.10.10.1-255</td>
-                      <td>Linix</td>
-                      <td>
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-warning rounded-pill text-white py-1 bg-orange-400"
-                        >
-                          Partial Provisioned
-                        </button>
-                      </td>
-                      <td>11:10:21 AM 02/08/2023</td>
-                      <td><i class="bi bi-clock-history fs-5"></i></td>
+                      <th scope="row">3</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
                       <td><i class="bi bi-three-dots-vertical"></i></td>
                     </tr>
                   </tbody>
