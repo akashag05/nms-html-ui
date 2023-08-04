@@ -5,15 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap JS and dependencies -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Sidebar styles */
+      .sidebar {
+        position: fixed;
+        top: 4.8rem;
+        left: 195px;
+        height: calc(100vh - 4.8rem); /* Set height to 100vh */
+        /* width: 230px; */
+        /* background-color: #d9e5f5; */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: width 0.3s ease;
+        z-index: 0;
+        transform: translateX(-50%);
+        bottom: 0%;
+      }
 
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+      /* Hide the sidebar by default */
+      .sidebar {
+        display: block;
+      }
+
+      /* Show the sidebar when the show class is added */
+      .sidebar.show {
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <!-- Dashboard -->
@@ -107,7 +136,8 @@
               >
                 <a
                   class="nav-link"
-                  href="./SNMP.html"
+                  href="#"
+                  onclick="toggleSidebar()"
                   data-bs-placement="right"
                   title="Settings"
                 >
@@ -163,7 +193,7 @@
               <div class="row align-items-center">
                 <div class="col-sm-3 col-12 mb-4 mb-sm-0">
                   <!-- Title -->
-                  <h1 class="h2 mb-0 ls-tight">Discovery Profile</h1>
+                  <h1 class="h2 mb-0 ls-tight">Device Discovery</h1>
                 </div>
                 <!-- Actions -->
                 <div class="col-sm-5 col-12 pb-3">
@@ -204,12 +234,207 @@
         </header>
         <!-- Main -->
         <main class="py-6 bg-surface-secondary">
-          <div class="d-flex row container-fluid overflow-auto">
+          <div class="d-flex row">
             <div class="col-md-2">
-              <p>SUb Sidebar</p>
+              <div
+                class="sidebar p-1 overflow-auto"
+                id="mySidebar"
+              >
+                <ul class="list-group list-group-flush ">
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2 list-unstyled font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#accountSettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="accountSettingsCollapse"
+                      >
+                        <i class="bi bi-gear me-2"></i>
+                        Account Settings
+                        <!-- <i class="bi bi-chevron-down ms-sm-4"></i> -->
+                      </button>
+                      <ul class="collapse p-2" id="accountSettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 1</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 1</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 1</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2  font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#userSettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="userSettingsCollapse"
+                      >
+                        <i class="bi bi-person me-2"></i>
+                        User Settings
+                      </button>
+                      <ul class="collapse p-2" id="userSettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 2</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 2</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 2</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2  font-bold "
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#discoverySettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="discoverySettingsCollapse"
+                      >
+                        <i class="bi bi-gear me-2"></i>
+                        Discovery Settings
+                      </button>
+                      <ul class="collapse p-2" id="discoverySettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="./Credential.html"
+                            >Credential Profile</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Discovery Profile</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2  font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#monitorinSettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="monitorinSettingsCollapse"
+                      >
+                        <i class="bi bi-eye me-2"></i>
+                        Monitoring Settings
+                      </button>
+                      <ul class="collapse p-2" id="monitorinSettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 4</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 4</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 4</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2  font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#systemSettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="systemSettingsCollapse"
+                      >
+                        <i class="bi bi-gear me-2"></i>
+                        System Settings
+                      </button>
+                      <ul class="collapse p-2" id="systemSettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 5</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 5</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 5</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="col-md-10">
-              <div class="d-flex justify-content-between my-3">
+              <div class="d-flex justify-content-between my-3 px-5">
                 <div>
                   <form class="d-flex">
                     <input
@@ -335,6 +560,8 @@
         </main>
       </div>
     </div>
+    <!-- Sidebar -->
+
     <!-- Modal -->
     <div class="modal" tabindex="-1" role="dialog" id="myModal">
       <div class="modal-dialog" role="document">
@@ -387,7 +614,16 @@
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+
+    <!-- <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("mySidebar");
+        sidebar.classList.toggle("show");
+      }
+
+      // Initially hide the sidebar on page load
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.classList.remove("show");
+    </script> -->
   </body>
 </html>

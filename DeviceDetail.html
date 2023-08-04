@@ -12,8 +12,128 @@
     />
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
 
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <style>
+      /* Sidebar styles */
+      /* Sidebar styles */
+      .sidebar {
+        position: fixed;
+        top: 4.8rem;
+        left: 195px;
+        height: calc(100vh - 4.8rem); /* Set height to 100vh */
+        /* width: 230px; */
+        /* background-color: #d9e5f5; */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: width 0.3s ease;
+        z-index: 0;
+        transform: translateX(-50%);
+        bottom: 0%;
+      }
+
+      /* Hide the sidebar by default */
+      .sidebar {
+        display: block;
+      }
+
+      /* Show the sidebar when the show class is added */
+      .sidebar.show {
+        display: block;
+      }
+      .select2-container {
+        min-width: 300px;
+      }
+
+      .select2-results__option {
+        padding-right: 20px;
+        vertical-align: middle;
+      }
+      .select2-results__option:before {
+        content: "";
+        display: inline-block;
+        position: relative;
+        height: 20px;
+        width: 20px;
+        border: 2px solid #e9e9e9;
+        border-radius: 4px;
+        background-color: #fff;
+        margin-right: 20px;
+        vertical-align: middle;
+      }
+      .select2-results__option[aria-selected="true"]:before {
+        font-family: fontAwesome;
+        content: "\f00c";
+        color: #fff;
+        background-color: #f77750;
+        border: 0;
+        display: inline-block;
+        padding-left: 3px;
+      }
+      .select2-container--default
+        .select2-results__option[aria-selected="true"] {
+        background-color: #fff;
+      }
+      .select2-container--default
+        .select2-results__option--highlighted[aria-selected] {
+        background-color: #eaeaeb;
+        color: #272727;
+      }
+      .select2-container--default .select2-selection--multiple {
+        margin-bottom: 10px;
+      }
+      .select2-container--default.select2-container--open.select2-container--below
+        .select2-selection--multiple {
+        border-radius: 4px;
+      }
+      .select2-container--default.select2-container--focus
+        .select2-selection--multiple {
+        border-color: #f77750;
+        border-width: 2px;
+      }
+      .select2-container--default .select2-selection--multiple {
+        border-width: 2px;
+      }
+      .select2-container--open .select2-dropdown--below {
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+      .select2-selection .select2-selection--multiple:after {
+        content: "hhghgh";
+      }
+      /* select with icons badges single*/
+      .select-icon .select2-selection__placeholder .badge {
+        display: none;
+      }
+      .select-icon .placeholder {
+        /* 	display: none; */
+      }
+      .select-icon .select2-results__option:before,
+      .select-icon .select2-results__option[aria-selected="true"]:before {
+        display: none !important;
+        /* content: "" !important; */
+      }
+      .select-icon .select2-search--dropdown {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <!-- Dashboard -->
@@ -204,9 +324,201 @@
         </header>
         <!-- Main -->
         <main class="py-6 bg-surface-secondary">
-          <div class="d-flex row container-fluid overflow-auto">
+          <div class="d-flex row">
             <div class="col-md-2">
-              <p>Sub Sidebar</p>
+              <div class="sidebar p-1 overflow-auto" id="mySidebar">
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2 list-unstyled font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#accountSettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="accountSettingsCollapse"
+                      >
+                        <i class="bi bi-gear me-2"></i>
+                        Account Settings
+                        <!-- <i class="bi bi-chevron-down ms-sm-4"></i> -->
+                      </button>
+                      <ul class="collapse p-2" id="accountSettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 1</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 1</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 1</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2 font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#userSettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="userSettingsCollapse"
+                      >
+                        <i class="bi bi-person me-2"></i>
+                        User Settings
+                      </button>
+                      <ul class="collapse p-2" id="userSettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 2</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 2</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 2</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2 font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#discoverySettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="discoverySettingsCollapse"
+                      >
+                        <i class="bi bi-gear me-2"></i>
+                        Discovery Settings
+                      </button>
+                      <ul class="collapse p-2" id="discoverySettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="./Credential.html"
+                            >Credential Profile</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Discovery Profile</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2 font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#monitorinSettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="monitorinSettingsCollapse"
+                      >
+                        <i class="bi bi-eye me-2"></i>
+                        Monitoring Settings
+                      </button>
+                      <ul class="collapse p-2" id="monitorinSettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 4</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 4</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 4</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li
+                    class="list-group-item-action p-2 border-bottom border-secondary border-opacity-50 rounded-bottom-2 font-bold"
+                  >
+                    <div>
+                      <button
+                        class="nav-link d-flex align-items-center"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#systemSettingsCollapse"
+                        aria-expanded="false"
+                        aria-controls="systemSettingsCollapse"
+                      >
+                        <i class="bi bi-gear me-2"></i>
+                        System Settings
+                      </button>
+                      <ul class="collapse p-2" id="systemSettingsCollapse">
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 5</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 5</a
+                          >
+                        </li>
+                        <li class="">
+                          <a
+                            class="p-1 list-group-item-action border-bottom border-1 border-secondary rounded-2 dropdown-item"
+                            href="#"
+                            >Option 5</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="col-md-10">
               <div>
@@ -234,15 +546,17 @@
                     </select>
                   </div>
                   <div class="col-md-4">
-                    <select
-                      class="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option selected>Select Object Type</option>
-                      <option value="1">CPU</option>
-                      <option value="2">Memory</option>
-                      <option value="3">Interface</option>
-                    </select>
+                    <div class="">
+                      <select class="js-select2" multiple="multiple">
+                        <option value="O1" data-badge="">Option1</option>
+                        <option value="O2" data-badge="">Option2</option>
+                        <option value="O3" data-badge="">Option3</option>
+                        <option value="O4" data-badge="">Option4</option>
+                        <option value="O5" data-badge="">Option5</option>
+                        <option value="O6" data-badge="">Option6</option>
+                        <option value="O7" data-badge="">Option7</option>
+                      </select>
+                    </div>
                   </div>
                   <div class="col-md-3">
                     <button class="btn btm-sm btn-primary">Filter</button>
@@ -356,5 +670,14 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+      $(".js-select2").select2({
+        closeOnSelect: false,
+        placeholder: "Placeholder",
+        // allowHtml: true,
+        allowClear: true,
+        tags: true, // создает новые опции на лету
+      });
+    </script>
   </body>
 </html>
