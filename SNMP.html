@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+  <body>
+    <!-- Dashboard -->
+    <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+      <!-- Vertical Navbar -->
+      <nav
+        class="navbar show navbar-vertical navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg w-auto"
+        id="navbarVertical"
+      >
+        <div class="container-fluid">
+          <!-- Toggler -->
+          <button
+            class="navbar-toggler ms-n2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#sidebarCollapse"
+            aria-controls="sidebarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Brand -->
+          <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+            <img src="./assets/RDSig.png" alt="..." />
+          </a>
+          <!-- User menu (mobile) -->
+          <div class="navbar-user d-lg-none">
+            <!-- Dropdown -->
+            <div class="dropdown">
+              <!-- Toggle -->
+              <a
+                href="#"
+                id="sidebarAvatar"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <div class="avatar-parent-child">
+                  <img
+                    alt="Image Placeholder"
+                    src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                    class="avatar avatar- rounded-circle"
+                  />
+                  <span class="avatar-child avatar-badge bg-success"></span>
+                </div>
+              </a>
+              <!-- Menu -->
+              <div
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="sidebarAvatar"
+              >
+                <a href="#" class="dropdown-item">Profile</a>
+                <a href="#" class="dropdown-item">Settings</a>
+                <a href="#" class="dropdown-item">Billing</a>
+                <hr class="dropdown-divider" />
+                <a href="#" class="dropdown-item">Logout</a>
+              </div>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse navbar-collapse" id="sidebarCollapse">
+            <!-- Navigation -->
+            <ul class="navbar-nav d-flex justify-content-center flex-wrap">
+              <li class="nav-item d-flex justify-content-center">
+                <a
+                  class="nav-link"
+                  href="./index.html"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="right"
+                  title="Home"
+                >
+                  <i class="bi bi-house fs-4"></i>
+                </a>
+              </li>
+              <li class="nav-item d-flex justify-content-center">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="right"
+                  title="Reporting"
+                >
+                  <i class="bi bi-card-checklist fs-4"></i>
+                </a>
+              </li>
+              <li
+                class="nav-item d-flex justify-content-center"
+                id="toggleListItem"
+              >
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-placement="right"
+                  title="Settings"
+                >
+                  <i class="bi bi-gear fs-4"></i>
+                </a>
+              </li>
+              <!-- <li
+                class="nav-item dropdown d-flex justify-content-center"
+                id="subSideBarBtn"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  data-bs-placement="right"
+                  title="Settings"
+                >
+                  <i class="bi bi-gear fs-4"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li><a class="dropdown-item" href="#">User</a></li>
+                  <li><a class="dropdown-item" href="#">Role</a></li>
+                </ul>
+              </li> -->
+            </ul>
+            <div class="mt-auto"></div>
+            <!-- User (md) -->
+            <ul class="navbar-nav d-flex justify-content-center flex-wrap">
+              <li class="nav-item d-flex justify-content-center">
+                <a class="nav-link" href="./Profile.html">
+                  <i class="bi bi-person-square fs-4"></i>
+                </a>
+              </li>
+              <li class="nav-item d-flex justify-content-center">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-box-arrow-left fs-4"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Main content -->
+
+      <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+        <!-- Header -->
+        <header class="bg-surface-primary border-bottom pt-6">
+          <div class="container-fluid">
+            <div class="mb-npx">
+              <div class="row align-items-center">
+                <div class="col-sm-3 col-12 mb-4 mb-sm-0">
+                  <!-- Title -->
+                  <h1 class="h2 mb-0 ls-tight">Device Discovery</h1>
+                </div>
+                <!-- Actions -->
+                <div class="col-sm-5 col-12 pb-3">
+                  <form class="d-flex">
+                    <input
+                      class="form-control me-2"
+                      type="search"
+                      placeholder="Search"
+                      aria-label="Search"
+                    />
+                    <button
+                      class="btn btn-sm btn-outline-primary"
+                      type="submit"
+                    >
+                      Search
+                    </button>
+                  </form>
+                </div>
+                <div class="col-sm-4 col-12 text-sm-end">
+                  <div class="mx-n1">
+                    <!-- <a
+                      href="./Tenant.html"
+                      class="btn d-inline-flex btn-sm btn-primary mx-1"
+                    >
+                      <span>Tenant View</span>
+                    </a> -->
+                    <a href="#" class="btn d-inline-flex btn-sm border mx-1">
+                      <span class="">
+                        <i class="bi bi-gear"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Nav -->
+            </div>
+          </div>
+        </header>
+        <!-- Main -->
+        <main class="py-6 bg-surface-secondary">
+          <div class="d-flex row container-fluid overflow-auto">
+            <div class="col-md-3">
+              <ul class="left-menu theme1 theme3">
+                <li>
+                  <a>Menu Item 1</a>
+                  <ul>
+                    <li>
+                      <a>Menu Item 1.1</a>
+                      <ul>
+                        <li>
+                          <a>Menu Item 1.1.1</a>
+                          <ul>
+                            <li>
+                              <a>Menu Item 1.1.1.1</a>
+                              <ul>
+                                <li>
+                                  <a>Menu Item 1.1.1.1.1</a>
+                                  <ul>
+                                    <li>
+                                      <a href="https://google.com/">Google</a>
+                                    </li>
+                                    <li>
+                                      <a href="http://yahoo.com/">Yahoo!</a>
+                                    </li>
+                                    <li><a href="http://bing.com/">Bing</a></li>
+                                    <li>
+                                      <a href="http://duckduckgo.com/"
+                                        >Duck Duck Go</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li><a>Menu Item 1.1.1.1.2</a></li>
+                                <li><a>Menu Item 1.1.1.1.3</a></li>
+                                <li><a>Menu Item 1.1.1.1.4</a></li>
+                              </ul>
+                            </li>
+                            <li><a>Menu Item 1.1.1.2</a></li>
+                            <li><a>Menu Item 1.1.1.3</a></li>
+                            <li><a>Menu Item 1.1.1.4</a></li>
+                          </ul>
+                        </li>
+                        <li><a>Menu Item 1.1.2</a></li>
+                        <li><a>Menu Item 1.1.3</a></li>
+                        <li><a>Menu Item 1.1.4</a></li>
+                      </ul>
+                    </li>
+                    <li><a>Menu Item 1.2</a></li>
+                    <li><a>Menu Item 1.3</a></li>
+                    <li><a>Menu Item 1.4</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Menu Item 2</a>
+                  <ul>
+                    <li>
+                      <a>Menu Item 2.1</a>
+                      <ul>
+                        <li>
+                          <a>Menu Item 2.1.1</a>
+                          <ul>
+                            <li>
+                              <a>Menu Item 2.1.1.1</a>
+                              <ul>
+                                <li>
+                                  <a>Menu Item 2.1.1.1.1</a>
+                                  <ul>
+                                    <li>
+                                      <a href="https://www.nytimes.com/"
+                                        >New York Times</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="http://www.washingtonpost.com/"
+                                        >Washington Post</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="https://www.thetimes.co.uk/"
+                                        >The Times (London)</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="http://www.timesdispatch.com/"
+                                        >Richmond Times Dispatch</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li><a>Menu Item 2.1.1.1.2</a></li>
+                                <li><a>Menu Item 2.1.1.1.3</a></li>
+                                <li><a>Menu Item 2.1.1.1.4</a></li>
+                              </ul>
+                            </li>
+                            <li><a>Menu Item 2.1.1.2</a></li>
+                            <li><a>Menu Item 2.1.1.3</a></li>
+                            <li><a>Menu Item 2.1.1.4</a></li>
+                          </ul>
+                        </li>
+                        <li><a>Menu Item 2.1.2</a></li>
+                        <li><a>Menu Item 2.1.3</a></li>
+                        <li><a>Menu Item 2.1.4</a></li>
+                      </ul>
+                    </li>
+                    <li><a>Menu Item 2.2</a></li>
+                    <li><a>Menu Item 2.3</a></li>
+                    <li><a>Menu Item 2.4</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Menu Item 3</a>
+                  <ul>
+                    <li>
+                      <a>Menu Item 3.1</a>
+                      <ul>
+                        <li>
+                          <a>Menu Item 3.1.1</a>
+                          <ul>
+                            <li>
+                              <a>Menu Item 3.1.1.1</a>
+                              <ul>
+                                <li>
+                                  <a>Menu Item 3.1.1.1.1</a>
+                                  <ul>
+                                    <li>
+                                      <a href="https://www.facebook.com/"
+                                        >Facebook</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="https://www.twitter.com/"
+                                        >Twitter</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="https://plus.google.com/"
+                                        >Google +</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="http://www.myspace.com/"
+                                        >MySpace</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li><a>Menu Item 3.1.1.1.2</a></li>
+                                <li><a>Menu Item 3.1.1.1.3</a></li>
+                                <li><a>Menu Item 3.1.1.1.4</a></li>
+                              </ul>
+                            </li>
+                            <li><a>Menu Item 3.1.1.2</a></li>
+                            <li><a>Menu Item 3.1.1.3</a></li>
+                            <li><a>Menu Item 3.1.1.4</a></li>
+                          </ul>
+                        </li>
+                        <li><a>Menu Item 3.1.2</a></li>
+                        <li><a>Menu Item 3.1.3</a></li>
+                        <li><a>Menu Item 3.1.4</a></li>
+                      </ul>
+                    </li>
+                    <li><a>Menu Item 3.2</a></li>
+                    <li><a>Menu Item 3.3</a></li>
+                    <li><a>Menu Item 3.4</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Menu Item 4</a>
+                  <ul>
+                    <li>
+                      <a>Menu Item 4.1</a>
+                      <ul>
+                        <li>
+                          <a>Menu Item 4.1.1</a>
+                          <ul>
+                            <li>
+                              <a>Menu Item 4.1.1.1</a>
+                              <ul>
+                                <li>
+                                  <a>Menu Item 4.1.1.1.1</a>
+                                  <ul>
+                                    <li>
+                                      <a href="http://www.nfl.com/"
+                                        >National Football League (NFL)</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="http://www.mlb.com/"
+                                        >Major League Baseball (MLB)</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="http://www.nba.com/"
+                                        >National Basketbal Assocation (NBA)</a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a href="http://www.mlssoccer.com/"
+                                        >Major League Soccer</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li><a>Menu Item 4.1.1.1.2</a></li>
+                                <li><a>Menu Item 4.1.1.1.3</a></li>
+                                <li><a>Menu Item 4.1.1.1.4</a></li>
+                              </ul>
+                            </li>
+                            <li><a>Menu Item 4.1.1.2</a></li>
+                            <li><a>Menu Item 4.1.1.3</a></li>
+                            <li><a>Menu Item 4.1.1.4</a></li>
+                          </ul>
+                        </li>
+                        <li><a>Menu Item 4.1.2</a></li>
+                        <li><a>Menu Item 4.1.3</a></li>
+                        <li><a>Menu Item 4.1.4</a></li>
+                      </ul>
+                    </li>
+                    <li><a>Menu Item 4.2</a></li>
+                    <li><a>Menu Item 4.3</a></li>
+                    <li><a>Menu Item 4.4</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-8">
+              <!-- <div class="p-4 m-3 row justify-content-around">
+                <div class="col-md-3">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Select OEM</option>
+                    <option value="1">Cisco</option>
+                    <option value="2">Juniper</option>
+                    <option value="3">Tech Mahindra</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Select OS</option>
+                    <option value="1">IOS</option>
+                    <option value="2">IOS XR</option>
+                    <option value="3">ASR</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Select Object Type</option>
+                    <option value="1">CPU</option>
+                    <option value="2">Memory</option>
+                    <option value="3">Interface</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <button class="btn btm-sm btn-primary">Filter</button>
+                </div>
+              </div> -->
+              <div class="p-4">
+                <table
+                  class="table table-primary table-striped-columns border-2"
+                >
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Object Type</th>
+                      <th scope="col">Indicator Name (MIB)</th>
+                      <th scope="col">Alias (User)</th>
+                      <th scope="col">INdicator OID</th>
+                      <th scope="col">Unit</th>
+                      <th scope="col">Type (Gauge / Counter)</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td><i class="bi bi-three-dots-vertical"></i></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td><i class="bi bi-three-dots-vertical"></i></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td><i class="bi bi-three-dots-vertical"></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Tenant</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              id="closeCrossBtn"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="entityName" class="form-label">Entity Name</label>
+                <input type="text" class="form-control" id="entityName" />
+              </div>
+              <div class="mb-3">
+                <label for="businessUnit" class="form-label"
+                  >Business Unit</label
+                >
+                <input type="text" class="form-control" id="businessUnit" />
+              </div>
+              <div class="mb-3">
+                <label for="group" class="form-label">Group</label>
+                <input type="text" class="form-control" id="group" />
+              </div>
+              <div class="mb-3">
+                <label for="contact" class="form-label">Contact</label>
+                <input type="text" class="form-control" id="contact" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              id="closeModalBtn"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="saveBtn">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
