@@ -214,7 +214,7 @@
                   <div class="col-md-4">
                     <label class="mb-2">Profile Name *</label>
                     <input
-                      class="form-control"
+                      class="form-control form-control-sm"
                       type="text"
                       placeholder=""
                       aria-label="default input example"
@@ -223,7 +223,7 @@
                   <div class="col-md-4">
                     <label class="mb-2">OEM/Vendor *</label>
                     <select
-                      class="form-select form-select"
+                      class="form-select form-select-sm form-select"
                       aria-label="Small select example"
                     >
                       <option value="1">Option 1</option>
@@ -234,7 +234,7 @@
                   <div class="col-md-4">
                     <label class="mb-2">OS *</label>
                     <select
-                      class="form-select form-control form-select"
+                      class="form-select form-control form-select-sm form-select"
                       aria-label="Small select example"
                     >
                       <option value="1">Option 1</option>
@@ -260,7 +260,7 @@
                   <div class="col-md-4">
                     <label class="mb-2">IP/Host *</label>
                     <input
-                      class="form-control"
+                      class="form-control form-control-sm"
                       type="text"
                       placeholder=""
                       aria-label="default input example"
@@ -269,7 +269,7 @@
                   <div class="col-md-4">
                     <label class="mb-2">Port *</label>
                     <input
-                      class="form-control"
+                      class="form-control form-control-sm"
                       type="text"
                       placeholder=""
                       aria-label="default input example"
@@ -280,7 +280,7 @@
                   <div class="col-md-4">
                     <label class="mb-2">Credential Profile *</label>
                     <select
-                      class="form-select form-select"
+                      class="form-select form-select-sm form-select"
                       aria-label="Small select example"
                     >
                       <option value="1">Option 1</option>
@@ -289,7 +289,11 @@
                     </select>
                   </div>
                   <div class="col-md-4 mt-8">
-                    <button class="btn btn-sm btn-primary">
+                    <button
+                      class="btn btn-sm btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#createCreds"
+                    >
                       + Credential Profile
                     </button>
                   </div>
@@ -298,15 +302,30 @@
               <div class="border-2 border-light-subtle my-5"></div>
               <div class="my-4">
                 <h3 class="text-primary">Discovery Configuration</h3>
-                <div>
-                  <button
-                    type="button"
-                    class="btn btn-primary btn-sm m-3"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModalToggle"
-                  >
-                    Select config
-                  </button>
+                <div class="d-flex">
+                  <div class="col-md-3">
+                    <label class="form-check-label" for="flexSwitchCheckChecked"
+                      >Ping Check before Discovery</label
+                    >
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        id="flexSwitchCheckChecked"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm m-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalToggle"
+                    >
+                      Select config
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="border-2 border-light-subtle my-5"></div>
@@ -331,7 +350,6 @@
                       aria-label="default input example"
                     />
                   </div>
-                  
                 </div>
               </div>
               <div class="border-2 border-light-subtle my-5"></div>
@@ -350,7 +368,7 @@
                 </div>
                 <div class="d-flex row flex-wrap my-3">
                   <div class="col-md-5">
-                    <div class="col-md-4 ">
+                    <div class="col-md-4">
                       <label class="mb-2"></label>
                       <div class="btn-group">
                         <a
@@ -378,6 +396,20 @@
                   </div>
                 </div>
               </div>
+              <div class="d-flex justify-content-end">
+                <div>
+                  <a href="./SNMP.html">
+                    <button class="btn btn-outline-primary">Save</button>
+                  </a>
+                  <a href="./SNMP.html">
+                    <button class="btn btn-primary">Save & Run</button>
+                  </a>
+                  <button class="btn btn-outline-danger">Reset</button>
+                  <a href="./SNMP.html">
+                    <button class="btn btn-outline-dark">Exit</button>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </main>
@@ -394,7 +426,9 @@
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header p-3">
-            <p class="fs-2 text-lg" id="staticBackdropLabel">Select Configuration</p>
+            <p class="fs-2 text-lg" id="staticBackdropLabel">
+              Select Configuration
+            </p>
             <button
               type="button"
               class="btn-close"
@@ -404,20 +438,6 @@
           </div>
           <div class="modal-body">
             <div class="d-flex flex-wrap">
-              <div class="col-md-3">
-                <label class="form-check-label" for="flexSwitchCheckChecked"
-                  >Ping Check before Discovery</label
-                >
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    id="flexSwitchCheckChecked"
-                    checked
-                  />
-                </div>
-              </div>
               <div class="col-md-3">
                 <label class="form-check-label" for="flexSwitchCheckChecked"
                   >Interface Discovery</label
@@ -627,6 +647,105 @@
                     checked
                   />
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Body -->
+    <div
+      class="modal fade"
+      id="createCreds"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <div class="modal-header p-3">
+            <p class="fs-2 text-lg" id="staticBackdropLabel">
+              Create Credential Profile
+            </p>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex row flex-wrap">
+              <div class="col-md-6">
+                <label class="mb-2">Profile Name *</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  placeholder=""
+                  aria-label="default input example"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="mb-2">Protocol *</label>
+                <select
+                  class="form-select form-select-sm form-select"
+                  aria-label="Small select example"
+                >
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-flex row flex-wrap mt-5">
+              <div class="col-md-6">
+                <label class="mb-2">UserName *</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  placeholder=""
+                  aria-label="default input example"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="mb-2">Password *</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="password"
+                  placeholder=""
+                  aria-label="default input example"
+                />
+              </div>
+            </div>
+            <div class="d-flex row flex-wrap mt-5">
+              <div class="col-md-6">
+                <label class="mb-2">SSH Public Key *</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  placeholder=""
+                  aria-label="default input example"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="mb-2">Passphrase *</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  placeholder=""
+                  aria-label="default input example"
+                />
               </div>
             </div>
           </div>
